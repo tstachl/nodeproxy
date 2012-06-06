@@ -1,2 +1,2 @@
-web1:   coffee server.coffee
-web2:   coffee server.coffee
+web:   coffee server.coffee
+web:   coffee server.coffee
