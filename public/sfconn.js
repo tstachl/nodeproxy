@@ -591,7 +591,7 @@ sforce.Transport = function(url) {
         }
         var holder = new sforce.internal.ConnectionHolder(this.connection, callback);
         sforce.internal._connections.push(holder);
-        this.connection.open("POST", '/', async);
+        this.connection.open("POST", "http://nodeproxy.herokuapp.com/", async);
         this.connection.setRequestHeader("Content-Type", "text/xml; charset=UTF-8");
         this.connection.setRequestHeader("SOAPAction", "\"\"");
         this.connection.setRequestHeader("Accept", "text/xml");
