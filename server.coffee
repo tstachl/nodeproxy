@@ -24,14 +24,14 @@ server.get '/', (req, rsp) ->
   rsp.sendfile index
 
 server.all '/', (req, rsp) ->
-  rspHeaders =
-    'Access-Control-Allow-Origin': '*'
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
-    'Access-Control-Allow-Headers': process.env.HTTP_ACCESS_CONTROL_REQUEST_HEADERS
-    'Access-Control-Max-Age': '1728000'
+  rsp.header 'Access-Control-Allow-Origin', '*'
+  rsp.header 'Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
+  rsp.header 'Access-Control-Allow-Headers', req.header('Access-Control-Request-Headers')
+  rsp.header 'Access-Control-Max-Age', '1728000'
   
-  if req.method == 'OPTIONS'
-    rsp.send rspHeaders, 200
+  console.log '************** RESPONSE HEADERS: ', rsp.headers
+  
+  rsp.send 200 if req.method == 'OPTIONS'
   
   options = {}
   options.headers = {}
