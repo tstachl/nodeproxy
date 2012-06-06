@@ -27,11 +27,8 @@ server.all '/', (req, rsp) ->
   rsp.header 'Access-Control-Allow-Origin', '*'
   rsp.header 'Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
   rsp.header 'Access-Control-Allow-Headers', req.header('Access-Control-Request-Headers')
-  rsp.header 'Access-Control-Max-Age', '1728000'
-  
-  console.log '************** RESPONSE HEADERS: ', rsp.headers
-  
-  rsp.send 200 if req.method == 'OPTIONS'
+  rsp.header 'Access-Control-Max-Age', '1728000'  
+  return rsp.send 200 if req.method == 'OPTIONS'
   
   options = {}
   options.headers = {}
