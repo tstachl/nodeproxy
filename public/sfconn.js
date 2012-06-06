@@ -596,7 +596,7 @@ sforce.Transport = function(url) {
         this.connection.setRequestHeader("SOAPAction", "\"\"");
         this.connection.setRequestHeader("Accept", "text/xml");
         this.connection.setRequestHeader("USER_AGENT", "SFAJAX 1.0");
-        this.connection.setRequestHeader("Proxy", this.url);
+        this.connection.setRequestHeader("Proxy", "http://na1.salesforce.com" + this.url);
         this.connection.send(envelope);
         if (async && typeof(timeout) !== "undefined") {
             this.setTimeoutOn(holder, timeout);
