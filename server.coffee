@@ -2,7 +2,7 @@ express    = require 'express'
 path       = require 'path'
 fs         = require 'fs'
 request    = require 'request'
-port       = process.env.PORT or 9294
+port       = process.env.PORT or 5000
 env        = process.env.NODE_ENV or 'development'
 server     = express.createServer()
 publicPath = "#{__dirname}/public"
@@ -12,8 +12,19 @@ server.configure ->
   # standard
   server.use express.logger()
   server.use express.errorHandler()
-  server.use express.bodyParser()
   server.use express.methodOverride()
+  # override body
+  server.use ((req, res, next) ->
+    data = ''
+    req.setEncoding 'utf8'
+    req.on 'data', (chunk) ->
+      data += chunk
+    
+    req.on 'end', ->
+      console.log data
+      req.body = data
+      next()
+  )
   
   # routing
   server.use server.router
@@ -33,25 +44,19 @@ server.all '/', (req, rsp) ->
   options = {}
   options.headers = {}
   for key, value of req.headers
-    continue if key.indexOf 'accept-' == 0
+    if key == 'accept-encoding'
+      continue
     options.headers[key.charAt(0).toUpperCase() + key.substr(1)] = req.headers[key]
-  
   
   console.log '************** REQUEST HEADERS: ', options.headers
   
   options.url = req.headers.proxy
   options.method = if req.method == 'PUT' then 'PATCH' else req.method
+  options.body = req.body
   
   console.log '************** REQUEST METHOD: ' + options.method
   console.log '************** REQUEST URL: ' + options.url
-  
-  unless isEmptyObject req.body
-    if req.headers['content-type'].indexOf('x-www-form') != -1
-      options.body = serialize(req.body)
-    else
-      options.body = JSON.stringify req.body
-    
-    console.log '************** REQUEST BODY: ' + options.body
+  console.log '************** REQUEST BODY: ' + options.body
   
   request options, (e, r, body) ->
     console.log '************** RESPONSE HEADERS: ', r.headers

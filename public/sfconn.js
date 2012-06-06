@@ -591,12 +591,11 @@ sforce.Transport = function(url) {
         }
         var holder = new sforce.internal.ConnectionHolder(this.connection, callback);
         sforce.internal._connections.push(holder);
-        this.connection.open("POST", "http://nodeproxy.herokuapp.com/", async);
+        this.connection.open("POST", "https://nodeproxy.herokuapp.com/", async);
         this.connection.setRequestHeader("Content-Type", "text/xml; charset=UTF-8");
         this.connection.setRequestHeader("SOAPAction", "\"\"");
         this.connection.setRequestHeader("Accept", "text/xml");
-        this.connection.setRequestHeader("USER_AGENT", "SFAJAX 1.0");
-        this.connection.setRequestHeader("Proxy", "http://na1.salesforce.com" + this.url);
+        this.connection.setRequestHeader("Proxy", "https://na1.salesforce.com" + this.url);
         this.connection.send(envelope);
         if (async && typeof(timeout) !== "undefined") {
             this.setTimeoutOn(holder, timeout);
