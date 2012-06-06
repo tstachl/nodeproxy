@@ -5,6 +5,7 @@ request    = require 'request'
 port       = process.env.PORT or 9294
 env        = process.env.NODE_ENV or 'development'
 server     = express.createServer()
+publicPath = "#{__dirname}/public"
 
 server.configure ->
   # standard
@@ -15,6 +16,7 @@ server.configure ->
   
   # routing
   server.use server.router
+  server.use express.static publicPath
 
 server.all '/', (req, rsp) ->
   rsp.send 200 if req.method == 'OPTIONS'
