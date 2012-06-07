@@ -1753,3 +1753,8 @@ sforce.connection.serverUrl = (typeof window.UserContext != "undefined") ? UserC
 if (typeof(__sfdcSessionId) != "undefined") {
     sforce.connection.sessionId = __sfdcSessionId;
 }
+
+if (window.sfAsyncInit && !window.sfAsyncInit.hasRun) {
+  window.fbAsyncInit.hasRun = true;
+  fbAsyncInit();
+}
