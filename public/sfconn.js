@@ -1755,6 +1755,6 @@ if (typeof(__sfdcSessionId) != "undefined") {
 }
 
 if (window.sfAsyncInit && !window.sfAsyncInit.hasRun) {
-  window.fbAsyncInit.hasRun = true;
-  fbAsyncInit();
+  window.sfAsyncInit.hasRun = true;
+  sfAsyncInit();
 }
