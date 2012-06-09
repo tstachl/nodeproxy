@@ -1,12 +1,20 @@
 express    = require 'express'
 path       = require 'path'
 fs         = require 'fs'
+stitch     = require 'stitch'
 request    = require 'request'
 port       = process.env.PORT or 5000
 env        = process.env.NODE_ENV or 'development'
 server     = express.createServer()
 publicPath = "#{__dirname}/public"
 index      = "#{publicPath}/index.html"
+desk       = stitch.createPackage
+  paths: ["#{__dirname}/desk"]
+  dependencies: ["#{__dirname}/lib/sfconn.js"]
+sfconn     = stitch.createPackage
+  dependencies: ["#{__dirname}/lib/sfconn.js"]
+
+
 
 server.configure ->
   # standard
@@ -33,6 +41,10 @@ server.configure ->
 server.get '/', (req, rsp) ->
   rsp.contentType index
   rsp.sendfile index
+
+server.get '/sfconn.js', sfconn.createServer()
+server.get '/assets/sfconn.js', sfconn.createServer()
+server.get '/assets/desk.js', desk.createServer()
 
 server.all '/', (req, rsp) ->
   rsp.header 'Access-Control-Allow-Origin', '*'

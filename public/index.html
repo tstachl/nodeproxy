@@ -1,0 +1,262 @@
+<html>
+<head>
+  <title>Test</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" /> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="http://localhost:5000/assets/desk.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="new_customer_action"><div class="a-new-customer-form a-new-customer-container">
+
+	<div class="tabContainer">
+		<div class="a-header">
+			<strong>Add New Customer</strong> Please add the fields for the customer below to create the customer and new case.
+			<a href="/agent/tickets/new?ctid=8eeb8960-947e-012f-d6b2-12313e001d52&amp;interaction_direction_id=1&amp;interaction_type_id=60&amp;reset=1" data-method="get" data-remote="true">(Start Over)</a>
+		</div>
+		<div id="ticket_customer_tid_8eeb8960-947e-012f-d6b2-12313e001d52">
+			<form accept-charset="UTF-8" action="/agent/customers?ctid=8eeb8960-947e-012f-d6b2-12313e001d52&amp;interaction_direction_id=1&amp;interaction_type_id=60" class="edit_customer a-case-tab-form" data-current-tab="8eeb8960-947e-012f-d6b2-12313e001d52" data-remote="true" id="new_customer" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="cyu0xb0bsT7qRbAan/P+jn0OGRyBcpxE7P2apDjqu+U="></div>
+
+	<input type="hidden" id="customer_agent_case_close_option_id" name="customer_agent_case_close_option_id" value="">
+	<input type="hidden" id="customer_agent_case_close_on_completion" name="customer_agent_case_close_on_completion" value="">
+	<input type="hidden" id="customer_required_interaction_type_id" name="customer[required_interaction_type_id]" value="60">
+
+	<div class="agent_customer_main_form_part">
+
+		
+
+			<div class="agent_customer_gravatar">
+  <span class="a-user-icon">
+   			<img alt="" height="64" src="https://d3jyn100am7dxp.cloudfront.net/images/unknown_user_64.png?1339221073" width="64">
+ 
+  </span>
+</div>
+
+<div class="agent_customer_section short">
+  <span class="agent_customer_section_label label_first_name">
+	First Name
+</span>
+<div class="agent_customer_section_data">
+		<input autocomplete="off" class="default customer_record_input_field" id="customer_first_name" maxlength="30" name="customer[first_name]" size="30" type="text">
+</div>
+
+</div>
+
+<div class="agent_customer_section short">
+  <span class="agent_customer_section_label label_last_name">
+	Last Name
+</span>
+<div class="agent_customer_section_data">
+		<input autocomplete="off" class="default customer_record_input_field" id="customer_last_name" maxlength="60" name="customer[last_name]" size="60" type="text">
+</div>
+
+</div>
+
+<div class="agent_customer_section salesforce">
+  
+
+  <span class="agent_customer_section_label label_custom label_custom_salesforce_id">
+    Salesforce
+  </span>
+
+  <div class="agent_customer_section_data">
+    <input autocomplete="off" class="default custom_field_string " id="customer_custom1" maxlength="100" name="customer[custom1]" size="100" type="text" style="display: none; ">
+  </div>
+
+
+</div>
+
+<div class="agent_customer_section">
+<span class="agent_customer_section_label label_company">
+	Company
+</span>
+<div class="agent_customer_section_data">
+	<input autocomplete="off" class="default customer_record_input_field" id="customer_company" maxlength="60" name="customer[company]" size="60" type="text">
+</div>
+
+
+</div>
+
+<div class="agent_customer_section">
+<span class="agent_customer_section_label label_title">
+	Title
+</span>
+<div class="agent_customer_section_data">
+		<input autocomplete="off" class="default customer_record_input_field" id="customer_title" maxlength="30" name="customer[title]" size="30" type="text">
+</div>
+
+</div>
+
+<div class="agent_customer_section">
+
+</div>
+
+<div class="agent_customer_section">
+<span class="agent_customer_section_label label_title">
+	Twitter
+</span>
+
+<div class="agent_customer_section_data agent_customer_twitter_link a-float-wrap">
+			<div class="agent_customer_info_twitter_user_logins a-float-wrap" style="display:none;">		
+									<span class="at">@</span>
+					<input autocomplete="off" class="default short customer_record_input_field agent_customer_info_twitter_user_login" id="customer_twitter_user_attributes_login" maxlength="15" name="customer[twitter_user_attributes][login]" size="15" type="text">
+
+				<span class="a-remove"><a class="remove_customer_email_button" href="#" onclick="$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_info_twitter_user_login').val('');$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_info_twitter_user_logins').hide();$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .twitter_user_valid_icon').hide();$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .twitter_user_valid_icon_loading').hide();$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_twitter_user_logins_more_link').show();; return false;"><img alt="Delete" src="https://d3jyn100am7dxp.cloudfront.net/images/delete.png?1339221073"></a></span>
+
+				<div id="twitter_user_valid_icon_loading_ticket_" class="twitter_user_valid_icon_loading a-loading" style="display:none;">
+					<img alt="" height="16" src="https://d3jyn100am7dxp.cloudfront.net/images/ajax-loader-small.gif?1339221073" style="" width="16">
+				</div>
+
+				<div id="twitter_user_valid_icon_ticket_" class="twitter_user_valid_icon a-valid" style="display:none;">
+				</div>
+			</div>
+			
+			<div class="agent_customer_more_link agent_twitter_user_logins_more_link" style="">
+				<a href="#" onclick="$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_twitter_user_logins_more_link').hide('fast',
+					function(){
+								$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_info_twitter_user_logins').show('fast',
+									function(){
+											$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_info_twitter_user_logins input').focus();
+											});
+							}); ; return false;">Add a Twitter user</a>
+			</div>
+
+						
+</div>
+
+</div>
+
+<div class="agent_customer_section">
+
+<span class="agent_customer_section_label label_title">
+	Facebook
+</span>
+<div class="agent_customer_section_data agent_customer_twitter_link">
+</div>
+
+</div>
+
+<div class="agent_customer_section">
+<span class="agent_customer_section_label label_email">
+	Email
+</span>
+<div class="agent_customer_section_data">
+	<div class="agent_customer_info_email_addresses">
+			</div>
+	<div class="agent_customer_more_link_email agent_customer_more_link">
+		<a href="#" onclick="$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_info_email_addresses').append('&lt;div class=\&quot;a-float-wrap agent_case_customer_email agent_case_customer_email_counter customer_contact_email_new_record\&quot;&gt;\n\n	&lt;input autocomplete=\&quot;off\&quot; class=\&quot;default short customer_record_input_field\&quot; id=\&quot;customer_customer_contact_emails_attributes_NEW_RECORD_email\&quot; maxlength=\&quot;60\&quot; name=\&quot;customer[customer_contact_emails_attributes][NEW_RECORD][email]\&quot; size=\&quot;60\&quot; type=\&quot;text\&quot; /&gt; \n	&lt;select class=\&quot;default x-short\&quot; id=\&quot;customer_customer_contact_emails_attributes_NEW_RECORD_customer_contact_type_id\&quot; name=\&quot;customer[customer_contact_emails_attributes][NEW_RECORD][customer_contact_type_id]\&quot;&gt;&lt;option value=\&quot;1\&quot;&gt;Home&lt;\/option&gt;\n&lt;option value=\&quot;2\&quot;&gt;Work&lt;\/option&gt;\n&lt;option value=\&quot;3\&quot;&gt;Mobile&lt;\/option&gt;\n&lt;option value=\&quot;4\&quot;&gt;Other&lt;\/option&gt;&lt;\/select&gt;\n	&lt;a class=\&quot;remove_customer_email_button a-remove\&quot; href=\&quot;#\&quot; onclick=\&quot;$(this).parent().hide();$(this).parent().remove();if($(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_email_counter\').length &amp;lt;= 4){$(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_more_link_email\').show();}; return false;\&quot; style=\&quot;display:none;\&quot;&gt;&lt;img alt=\&quot;Delete\&quot; src=\&quot;https://d3jyn100am7dxp.cloudfront.net/images/delete.png?1339221073\&quot; /&gt;&lt;\/a&gt;\n\n	&lt;div class=\&quot;email_address_valid_icon_loading a-loading\&quot;&gt;\n		&lt;img alt=\&quot;\&quot; height=\&quot;16\&quot; src=\&quot;https://d3jyn100am7dxp.cloudfront.net/images/ajax-loader-small.gif?1339221073\&quot; style=\&quot;\&quot; width=\&quot;16\&quot; /&gt;\n	&lt;\/div&gt;\n\n	&lt;div class=\&quot;email_address_valid_icon a-valid\&quot;&gt;\n	&lt;\/div&gt;\n&lt;\/div&gt;\n\n\n	&lt;script type=\&quot;text/javascript\&quot;&gt; 	\n	//&lt;![CDATA[\n		$(document).ready(function () {\n\n			$(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_email_counter .customer_record_input_field\').each(function(index) {\n				\n				record_id=$(this).prop(\'id\');	\n				if ( $(this).parent().hasClass(\'fieldWithErrors\') ) {\n					$(this).parent().nextAll(\'.email_address_valid_icon\').prop(\'id\',\'ticket__valid_icon_\'+record_id);\n					$(this).parent().nextAll(\'.email_address_valid_icon_loading\').prop(\'id\',\'ticket__loading_\'+record_id);			\n				} else {\n					$(this).nextAll(\'.email_address_valid_icon\').prop(\'id\',\'ticket__valid_icon_\'+record_id);\n					$(this).nextAll(\'.email_address_valid_icon_loading\').prop(\'id\',\'ticket__loading_\'+record_id);					\n				}		\n				\n				$(this).unbind(\'change\').change(function(){\n					$(this).addClass(\'changed\');\n				});\n				\n				$(this).unbind(\'blur\').blur(function(){\n					//get rid of the whitespace\n					if($(this).hasClass(\'changed\')){\n						$(this).val($.trim($(this).val()));\n						if ( $(this).parent().hasClass(\'fieldWithErrors\')  ) {\n							$(this).parent().nextAll(\'.email_address_valid_icon\').hide();\n							$(this).parent().nextAll(\'.email_address_valid_icon_loading\').show();\n						} else {\n							$(this).nextAll(\'.email_address_valid_icon\').hide();\n							$(this).nextAll(\'.email_address_valid_icon_loading\').show();\n						}\n\n						jQuery.ajax({data:\'email_address=\'+ encodeURIComponent($(this).val()) + \'&amp;amp;record_id=\' + $(this).prop(\'id\'), dataType:\'script\', type:\'get\', url:\'/agent/customers/verify_email_address_case_customer\'})\n						$(this).removeClass(\'changed\');\n						\n					}\n\n				})		\n			});\n			\n			$(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_email\').hover(\n				function(){$(this).find(\'.remove_customer_email_button\').show();},\n				function(){$(this).find(\'.remove_customer_email_button\').hide();}	\n			);\n\n		});  \n	//]]&gt;\n	&lt;\/script&gt;\n\n'.replace(/NEW_RECORD/g, new Date().getTime()) );
+        $('.customer_contact_email_new_record').show();$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_email:last input:last').focus(); 
+        if($('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_email_counter').length &gt;= 4){$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_more_link_email').hide();}
+$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_email:last').hover(
+      			function(){$(this).find('.remove_customer_email_button').show();},
+      			function(){$(this).find('.remove_customer_email_button').hide();}	
+      		);; return false;">Add an email address</a>
+	</div>
+</div>
+
+</div>
+
+<div class="agent_customer_section">
+<span class="agent_customer_section_label label_phone">
+	Phone
+</span>
+<div class="agent_customer_section_data">
+	<div class="agent_customer_info_phones">
+			</div>
+	<div class="agent_customer_more_link_phone agent_customer_more_link">
+		<a href="#" onclick="$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_info_phones').append('\n&lt;div class=\&quot;a-float-wrap agent_case_customer_phone agent_case_customer_phone_counter customer_contact_phone_new_record\&quot;&gt;\n	&lt;input autocomplete=\&quot;off\&quot; class=\&quot;default short phone_mask customer_record_input_field\&quot; id=\&quot;customer_customer_contact_phones_attributes_NEW_RECORD_phone\&quot; maxlength=\&quot;60\&quot; name=\&quot;customer[customer_contact_phones_attributes][NEW_RECORD][phone]\&quot; size=\&quot;60\&quot; type=\&quot;text\&quot; /&gt; \n	&lt;select class=\&quot;default x-short\&quot; id=\&quot;customer_customer_contact_phones_attributes_NEW_RECORD_customer_contact_type_id\&quot; name=\&quot;customer[customer_contact_phones_attributes][NEW_RECORD][customer_contact_type_id]\&quot;&gt;&lt;option value=\&quot;1\&quot;&gt;Home&lt;\/option&gt;\n&lt;option value=\&quot;2\&quot;&gt;Work&lt;\/option&gt;\n&lt;option value=\&quot;3\&quot;&gt;Mobile&lt;\/option&gt;\n&lt;option value=\&quot;4\&quot;&gt;Other&lt;\/option&gt;&lt;\/select&gt;\n	&lt;a class=\&quot;remove_customer_phone_button a-remove\&quot; href=\&quot;#\&quot; onclick=\&quot;$(this).parent().hide();$(this).parent().remove();if($(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_phone_counter\').length &amp;lt;= 4){$(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_more_link_phone\').show();}; return false;\&quot; style=\&quot;display:none;\&quot;&gt;&lt;img alt=\&quot;Delete\&quot; src=\&quot;https://d3jyn100am7dxp.cloudfront.net/images/delete.png?1339221073\&quot; /&gt;&lt;\/a&gt;\n&lt;\/div&gt;\n\n&lt;script type=\&quot;text/javascript\&quot;&gt;\n	$(document).ready(function() {\n		//BSB removed the mask 7/14/10\n		//$(\&quot;#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .phone_mask\&quot;).mask(\&quot;(999) 999-9999\&quot;).removeClass(\'phone_mask\');\n		\n		$(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_phone\').hover(\n			function(){$(this).find(\'.remove_customer_phone_button\').show();},\n			function(){$(this).find(\'.remove_customer_phone_button\').hide();}	\n		);	\n	\n	});\n&lt;\/script&gt;	\n\n\n\n'.replace(/NEW_RECORD/g, new Date().getTime()) );
+        $('.customer_contact_phone_new_record').show();$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_phone:last input:last').focus();
+        if($('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_phone_counter').length &gt;= 4){$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_more_link_phone').hide();}
+$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_phone:last').hover(
+        			function(){$(this).find('.remove_customer_phone_button').show();},
+        			function(){$(this).find('.remove_customer_phone_button').hide();}	
+        		);; return false;">Add a phone number</a>
+	</div>
+</div>
+
+</div>
+
+<div class="agent_customer_section">
+<span class="agent_customer_section_label label_address">
+	Address
+</span>
+<div class="agent_customer_section_data">
+	<div class="agent_customer_info_addresses">
+			</div>
+	<div class="agent_customer_more_link_address agent_customer_more_link">
+		<a href="#" onclick="$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_info_addresses').append('\n&lt;div class=\&quot;a-float-wrap agent_case_customer_address agent_case_customer_address_counter customer_contact_address_new_record\&quot;&gt;\n	&lt;textarea autocomplete=\&quot;off\&quot; class=\&quot;default short customer_record_input_field\&quot; cols=\&quot;40\&quot; id=\&quot;customer_customer_contact_addresses_attributes_NEW_RECORD_location\&quot; name=\&quot;customer[customer_contact_addresses_attributes][NEW_RECORD][location]\&quot; rows=\&quot;20\&quot;&gt;&lt;\/textarea&gt; \n	&lt;select class=\&quot;default x-short\&quot; id=\&quot;customer_customer_contact_addresses_attributes_NEW_RECORD_customer_contact_type_id\&quot; name=\&quot;customer[customer_contact_addresses_attributes][NEW_RECORD][customer_contact_type_id]\&quot;&gt;&lt;option value=\&quot;1\&quot;&gt;Home&lt;\/option&gt;\n&lt;option value=\&quot;2\&quot;&gt;Work&lt;\/option&gt;\n&lt;option value=\&quot;3\&quot;&gt;Mobile&lt;\/option&gt;\n&lt;option value=\&quot;4\&quot;&gt;Other&lt;\/option&gt;&lt;\/select&gt;\n	&lt;a class=\&quot;remove_customer_address_button a-remove\&quot; href=\&quot;#\&quot; onclick=\&quot;$(this).parent().hide();$(this).parent().remove();if($(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_address_counter\').length &amp;lt;= 4){$(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_more_link_address\').show();}; return false;\&quot; style=\&quot;display:none;\&quot;&gt;&lt;img alt=\&quot;Delete\&quot; src=\&quot;https://d3jyn100am7dxp.cloudfront.net/images/delete.png?1339221073\&quot; /&gt;&lt;\/a&gt;\n&lt;\/div&gt;\n\n&lt;script type=\&quot;text/javascript\&quot;&gt; \n//&lt;![CDATA[\n	$(document).ready(function () {\n\n		$(\'#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_address\').hover(\n			function(){$(this).find(\'.remove_customer_address_button\').show();},\n			function(){$(this).find(\'.remove_customer_address_button\').hide();}	\n		);\n\n\n	});  \n//]]&gt;\n&lt;\/script&gt;\n\n\n\n'.replace(/NEW_RECORD/g, new Date().getTime()) );
+        $('.customer_contact_address_new_record').show();$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_address:last textarea').focus();
+        if($('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_address_counter').length &gt;= 4){$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_customer_more_link_address').hide();}
+$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .agent_case_customer_address:last').hover(
+        			function(){$(this).find('.remove_customer_address_button').show();},
+        			function(){$(this).find('.remove_customer_address_button').hide();}	
+        		);; return false;">Add an address</a>
+	</div>
+</div>
+
+</div>
+
+<div class="agent_customer_section">
+<span class="agent_customer_section_label label_desc">
+	Background Info
+	<span class="agent_light_text agent_font_smaller">(optional)</span>
+</span>
+
+	<textarea autocomplete="off" class="default form_customer_desc" cols="40" id="customer_desc" maxlength="1024" name="customer[desc]" rows="20"></textarea>
+
+
+
+</div>
+
+<style>
+  .ui-autocomplete-category {
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .8em 0 .2em;
+    line-height: 1.5;
+  }
+</style>
+
+
+
+	</div>
+</form>
+
+
+
+
+
+
+		</div>
+		<div class="input button">
+			
+
+<button class="a-button accept" onclick="
+notify('Creating new phone call case');$('#tabs-tid_8eeb8960-947e-012f-d6b2-12313e001d52 .edit_customer').submit();" type="button">
+
+		<span class="icon"></span>
+	<span class="text ">Create new phone call for this customer</span>
+</button>
+		</div>
+	</div>
+</div>
+
+
+</div>
+<script>
+  $.widget('desk.contact', $.ui.autocomplete, require('contact'));
+  $('.salesforce input').contact({
+    category: 'company',
+    username: 'api@developer.demo',
+    password: '88as4685',
+    mapping: {
+      'first_name': 'FirstName',
+      'last_name': 'LastName',
+      'company': 'Account.Name',
+      'title': 'Title',
+      'industry': 'Account.Industry'
+    }
+  });
+</script>
+</body>
+</html>
