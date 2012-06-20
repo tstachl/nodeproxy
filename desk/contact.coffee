@@ -26,7 +26,7 @@ module.exports =
     if typeof force == 'undefined'
       return unless @options.username and @options.password and @options.clientId and @options.clientSecret
       Client = require 'force'
-      window.force = new Client @options.clientId, @options.clientSecret, null, '/api'
+      window.force = new Client @options.clientId, @options.clientSecret
       window.force.login @options.username, @options.password, sf
     else
       sf()
