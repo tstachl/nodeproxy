@@ -10,9 +10,9 @@ publicPath = "#{__dirname}/public"
 index      = "#{publicPath}/index.html"
 desk       = stitch.createPackage
   paths: ["#{__dirname}/desk"]
-  dependencies: ["#{__dirname}/lib/sfconn.js"]
 sfconn     = stitch.createPackage
   dependencies: ["#{__dirname}/lib/sfconn.js"]
+
 
 
 
@@ -46,7 +46,7 @@ server.get '/sfconn.js', sfconn.createServer()
 server.get '/assets/sfconn.js', sfconn.createServer()
 server.get '/assets/desk.js', desk.createServer()
 
-server.all '/', (req, rsp) ->
+server.all '/api', (req, rsp) ->
   rsp.header 'Access-Control-Allow-Origin', '*'
   rsp.header 'Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
   rsp.header 'Access-Control-Allow-Headers', req.header('Access-Control-Request-Headers')

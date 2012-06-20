@@ -14,34 +14,38 @@ module.exports =
     $.ui.autocomplete.prototype._create.call @
   
   _initSalesforce: ->
-    unless sforce.connection.sessionId
-      return unless @options.username && @options.password
-      sforce.connection.login @options.username, @options.password
+    sf = () =>
+      fields = []
+      for key, value of @options.mapping
+        fields.push value
+      
+      force.query "Select Id, #{fields.join(',')} From Contact", (rsp) =>
+        @_onSuccess rsp
+      , @_onFailure
     
-    fields = []
-    for key, value of @options.mapping
-      fields.push value
-    
-    sforce.connection.query "Select Id, #{fields.join(',')} From Contact",
-      onSuccess: @_onSuccess
-      onFailure: @_onFailure
-      source: @
+    if typeof force == 'undefined'
+      return unless @options.username and @options.password and @options.clientId and @options.clientSecret
+      Client = require 'force'
+      window.force = new Client @options.clientId, @options.clientSecret, null, '/api'
+      window.force.login @options.username, @options.password, sf
+    else
+      sf()
   
-  _onSuccess: (queryResult, self) ->
-    if queryResult.size > 0
-      self.data = queryResult.getArray('records').map (item) ->
+  _onSuccess: (rsp) ->
+    if rsp.totalSize > 0
+      @data = rsp.records.map (item) =>
         obj = 
           value: "#{item.FirstName} #{item.LastName}, #{item.Account.Name}"
           id: item.Id
         
-        for key, value of self.options.mapping
+        for key, value of @options.mapping
           if ~value.indexOf '.'
             obj[key] = item[value.split('.')[0]][value.split('.')[1]] or 'None'
           else
             obj[key] = item[value] or 'None'
         
         obj
-      self.hideLoading()
+      @hideLoading()
   
   _onFailure: (error, self) ->
     alert "An error has occurred: #{error}"
