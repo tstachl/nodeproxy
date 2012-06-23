@@ -173,7 +173,7 @@ class Chatter
     if typeof force == 'undefined'
       return unless @username and @password and @clientId and @clientSecret
       client = require('force')
-      window.force = new client @clientId, @clientSecret, null, '/api'
+      window.force = new client @clientId, @clientSecret
       force.login @username, @password, $.proxy(@load, @)
     else
       @load()
