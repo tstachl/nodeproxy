@@ -1,6 +1,6 @@
 Handlebars.registerPartial 'CommentInfo', """
 <div class="feedcommentinfo">
-	<span class="feedcommentdate">{{formatDate createdDate}}</span>
+	<span class="feedcommentdate">{{myDateHelper createdDate}}</span>
 	{{#if myLike}}
 	  · <a href="/chatter/likes/{{myLike.id}}" data-toggle="like" data-type="DELETE" class="feedcommentlike">Unlike</a>
 	{{else}}
@@ -39,7 +39,7 @@ Handlebars.registerPartial 'Comments', """
 
 Handlebars.registerPartial 'FeedInfo', """
 <div class="feediteminfo">
-	<span class="feeditemdate">{{formatDate createdDate}}</span> · 
+	<span class="feeditemdate">{{myDateHelper createdDate}}</span> · 
   <a href="#" data-toggle="comment" data-id="{{id}}" class="feeditemcomment">Comment</a>
 	{{#if myLike}}
 	  · <a href="/chatter/likes/{{myLike.id}}" data-toggle="like" data-type="DELETE" class="feeditemlike">Unlike</a>
@@ -103,6 +103,10 @@ FeedItemPageTemplate = Handlebars.compile """
 </ul>
 -->
 """
+
+Handlebars.registerHelper 'myDateHelper', (a) ->
+	f = a.match /^(\d{4})-(\d{2})-(\d{2})T/i
+	"#{f[2]}/#{f[3]}/#{f[1]}"
 
 class Chatter
   username: ''
