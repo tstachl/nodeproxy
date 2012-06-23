@@ -30,7 +30,6 @@ class Client
         @setSessionToken oauthResponse.access_token, null, oauthResponse.instance_url
         callback(oauthResponse, status, xhr)
       error: error
-      context: @
       dataType: 'json'
       beforeSend: (xhr) =>
         xhr.setRequestHeader 'Proxy', url if @proxyUrl
@@ -55,7 +54,6 @@ class Client
       data: "grant_type=refresh_token&client_id=#{@clientId}&refresh_token=#{@refreshToken}"
       success: callback
       error: error
-      context: @
       dataType: 'json'
       beforeSend: (xhr) =>
         xhr.setRequestHeader 'Proxy', url if @proxyUrl
@@ -79,7 +77,6 @@ class Client
           , error
         else
           error jqXHR, textStatus, errorThrown
-      context: @
       dataType: 'json'
       beforeSend: (xhr) =>
         xhr.setRequestHeader 'Proxy', url if @proxyUrl
