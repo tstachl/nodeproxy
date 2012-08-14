@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" /> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
-  <script src="http://localhost:5000/assets/desk.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="new_customer_action"><div class="a-new-customer-form a-new-customer-container">
@@ -244,19 +243,43 @@ notify('Creating new phone call case');$('#tabs-tid_8eeb8960-947e-012f-d6b2-1231
 
 </div>
 <script>
-  $.widget('desk.contact', $.ui.autocomplete, require('contact'));
-  $('.salesforce input').contact({
-    category: 'company',
-    username: 'api@developer.demo',
-    password: '88as4685',
-    mapping: {
-      'first_name': 'FirstName',
-      'last_name': 'LastName',
-      'company': 'Account.Name',
-      'title': 'Title',
-      'industry': 'Account.Industry'
+  function callback() {
+    $.widget('desk.contact', $.ui.autocomplete, require('contact'));
+    $('.salesforce input').contact({
+      category: 'company',
+      username: 'api@developer.demo',
+      password: '88as4685',
+      clientId: '3MVG99OxTyEMCQ3ink2XhkI2RMHRXbFB0gWlJzSf5nlJ_jStLu9Ysn3lT70w0hqEvMwG32grgqQ2nb9DQwd4T',
+      clientSecret: '4558199801329056848',
+      mapping: {
+        'first_name': 'FirstName',
+        'last_name': 'LastName',
+        'company': 'Account.Name',
+        'title': 'Title',
+        'industry': 'Account.Industry'
+      }
+    });
+  }
+
+  (function(d, src, id, callback) {
+    if (d.getElementById(id)) return callback ? callback() : null;
+    var s, ref = d.getElementsByTagName('script')[0];
+    s = d.createElement('script'); s.id = id; s.async = true;
+    s.src = src; ref.parentNode.insertBefore(s, ref);
+    s.onload = s.onreadystatechange = function(e, isAbort) {
+      if (!isAbort && callback && (!s.readyState || /loaded|complete/.test(s.readyState)))
+        callback()
     }
-  });
+  }(document, '/assets/desk.js', 'salesforce-jssdk', callback));
+  /*
+  (function(d) {
+    var js, id = 'salesforce-jssdk', ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) { return window.sfAsyncInit(); }
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = '//nodeproxy.herokuapp.com/assets/desk.js';
+    ref.parentNode.insertBefore(js, ref);
+  }(document));
+  */
 </script>
 </body>
 </html>

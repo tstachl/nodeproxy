@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8; IE=9">
+	<title>Desk.com Agent -- Thomas Stachl</title>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="https://d3jyn100am7dxp.cloudfront.net/images/favicon.ico?1340257874">
+	<link rel="icon" type="image/png" href="https://d3jyn100am7dxp.cloudfront.net/images/favicon.png?1340257874">
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" /> 
+
+	<link href="https://d3jyn100am7dxp.cloudfront.net/r0e7475227ac03b0eda5ecc80b6d4b0c445648a3d/assets/agent.cssgz?1340258018" media="all" rel="stylesheet" type="text/css">
+	<link href="https://d3jyn100am7dxp.cloudfront.net/r0e7475227ac03b0eda5ecc80b6d4b0c445648a3d/assets/agent_print.cssgz?1340258018" media="print" rel="stylesheet" type="text/css">
+	<script src="https://d3jyn100am7dxp.cloudfront.net/r0e7475227ac03b0eda5ecc80b6d4b0c445648a3d/assets/js_core.jsgz?1340258019" type="text/javascript"></script>
+	<script src="/handlebars.js"></script>
+	<script>
+
+	</script>
+	<style>		
+		.thumbnail {
+			background: white;
+			display: block;
+			padding: 4px;
+			line-height: 1;
+			border: 1px solid #DDD;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+			-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+		}
+
+		.thumbnail:hover {
+			border-color: #08C;
+			-webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+			-moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+			box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+		}
+		
+		.thumbnail > img {
+			display: block;
+			max-width: 100%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.feed {
+			width: 700px;
+			margin: 0 auto;
+		}
+
+		.feedcomments {
+			margin-top: 20px;
+		}
+		
+		.feedpost,
+		.feeditem,
+		.feedcomment,
+		.feedcommentpost {
+			position: relative;
+			padding-left: 67px;
+			margin: 10px 0;
+			padding-top: 4px;
+			padding-bottom: 4px;
+		}
+		
+		.feedcomment {
+			padding-left: 52px;
+		}
+		
+		.feedpostcontent,
+		.feeditemcontent,
+		.feedcommentcontent,
+		.feedcommentpostcontent {
+			padding-bottom: 5px;
+			border-bottom: 1px solid #DDD;
+			margin-bottom: 5px;
+		}
+		
+		.feedpostcontent,
+		.feedcommentpostcontent {
+			border-bottom: none;
+		}
+		
+		.feedpostphoto,
+		.feeditemphoto,
+		.feedcommentphoto {
+			position: absolute;
+			width: 47px;
+			left: 0;
+			top: 0;
+		}
+		
+		.feedcommentphoto {
+			width: 32px;
+		}
+		
+		.feedpostcontent textarea,
+		.feedcommentpostcontent textarea {
+			width: 620px;
+			height: 50px;
+			border-radius: 5px 5px 5px 5px;
+			-moz-border-radius: 5px 5px 5px 5px;
+			-webkit-border-radius: 5px 5px 5px 5px;
+			font-size: 12px;
+			float: left;
+			border: 1px solid #999;
+			outline: 0;
+			padding: 6px 5px;
+			resize: none;
+		}
+		
+		.feedcommentpostcontent textarea {
+			width: 553px;
+			height: 30px;
+		}
+		
+		.feedpostcontent,
+		.feedcommentpostcontent {
+			text-align: right;
+		}
+		
+		.feeditemauthor,
+		.feedcommentauthor {
+			color: #608BD2;
+		}
+		
+		.feeditemmeta,
+		.feedcommentmeta {
+			*zoom: 1;
+		}
+		
+		.feeditemmeta:before,
+		.feeditemmeta:after,
+		.feedcommentmeta:before,
+		.feedcommentmeta:after {
+			display: table;
+			content: "";
+		}
+		
+		.feeditemmeta:after,
+		.feedcommentmeta:after {
+			clear: both;
+		}
+		
+		.feeditempreview,
+		.feedcommentpreview {
+			max-width: 90px;
+			float: left;
+			margin-right: 10px;
+		}
+		
+		.feedcommentpreview {
+			max-width: 57px;
+		}
+		
+		.feeditemlink,
+		.feedcommentlink {
+			font-weight: bold;
+			margin-top: 4px;
+		}
+		
+		.feediteminfo,
+		.feedcommentinfo {
+			font-size: .85em;
+		}
+		
+		.feeditemdate,
+		.feedcommentdata {
+			color: #7D7D84;
+		}
+		
+		.feedpostcontent button,
+		.feedcommentpostcontent button {
+			padding: 5px 15px;
+			background: -webkit-gradient(linear,0% 0,0% 100%,from(#79A541),to(#92C74F));
+			border: 1px solid #79A541;
+			background: #92C74F;
+			background: -moz-linear-gradient(100% 100% 90deg,#92C74F,#79A541);
+			background: -webkit-gradient(linear,0% 0,0% 100%,from(#79A541),to(#92C74F));
+			background-image: -webkit-linear-gradient(top,#92C74F,#79A541);
+			background-image: -moz-linear-gradient(top,#92C74F,#79A541);
+			background-image: -ms-linear-gradient(top,#92C74F,#79A541);
+			width: auto;
+			height: auto;
+			margin: 10px 0 10px 5px;
+			font-size: 12px;
+			font-weight: bold;
+			box-shadow: 0 0 1px rgba(0,0,0,0.5);
+			-moz-box-shadow: 0 0 1px rgba(0,0,0,0.5);
+			-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.5);
+			box-shadow: inset 0 1px .3px rgba(255,255,255,0.2);
+			-moz-box-shadow: inset 0 1px .3px rgba(255,255,255,0.2);
+			-webkit-box-shadow: inset 0 1px .3px rgba(255,255,255,0.2);
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<ul class="feed">
+		<li class="feedpost">
+			<div class="feedpostcontent">
+				<textarea autocomplete="off" class="default xl form_case_desc no_resize" cols="40" maxlength="255"></textarea>
+				<button class="a-button">Send</button>
+			</div>
+		</li>
+		<li class="feeditem">
+			<div class="feeditemphoto thumbnail">
+				<img src="http://lorempixel.com/47/47/people" />
+			</div>
+			<div class="feeditemcontent">
+				<div class="feeditembody">
+					<span class="feeditemauthor">Lucy Marten</span>
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+				</div>
+				<div class="feeditemmeta">
+					<div class="feeditempreview thumbnail">
+						<img src="http://lorempixel.com/90/90/fashion" />
+					</div>
+					<div class="feeditemlink">
+						<a href="http://www.elle.com/">Fashion Magazine for Women - Celebrity Photos on ELLE.com</a>
+					</div>
+				</div>
+			</div>	
+			<div class="feediteminfo">
+				<span class="feeditemdate">Today at 2:38 PM</span> · <a href="#" class="feeditemcomment">Comment</a> · <a href="#" class="feeditemlike">Like</a>
+			</div>
+			<ul class="feedcomments">
+				<li class="feedcomment">
+					<div class="feedcommentphoto thumbnail">
+						<img src="http://lorempixel.com/32/32/people" />
+					</div>
+					<div class="feedcommentcontent">
+						<div class="feedcommentbody">
+							<span class="feedcommentauthor">Martina Kurz</span>
+							Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+						</div>
+						<div class="feedcommentmeta">
+							<div class="feedcommentpreview thumbnail">
+								<img src="http://lorempixel.com/57/57/fashion" />
+							</div>
+							<div class="feedcommentlink">
+								<a href="http://www.elle.com/">Fashion Magazine for Women - Celebrity Photos on ELLE.com</a>
+							</div>
+						</div>
+					</div>
+					<div class="feedcommentinfo">
+						<span class="feeditemdate">Today at 2:38 PM</span> · <a href="#" class="feedcommentlike">Like</a>
+					</div>
+				</li>
+
+			</ul>
+		</li>
+	</ul>
+	
+	<div id="chatter"></div>
+	
+	<script>
+		function callback() {
+			var ChatterApp = require('chatter'),
+					chatter = new ChatterApp({
+						username: 'tstachl@developer.demo',
+						password: '88as4685',
+			      clientId: '3MVG99OxTyEMCQ3ink2XhkI2RMHRXbFB0gWlJzSf5nlJ_jStLu9Ysn3lT70w0hqEvMwG32grgqQ2nb9DQwd4T',
+			      clientSecret: '4558199801329056848',
+						objectId: '0013000000om1yAAAQ'
+					});
+		}
+		
+	  (function(d, src, id, callback) {
+	    if (d.getElementById(id)) return callback ? callback() : null;
+	    var s, ref = d.getElementsByTagName('script')[0];
+	    s = d.createElement('script'); s.id = id; s.async = true;
+	    s.src = src; ref.parentNode.insertBefore(s, ref);
+	    s.onload = s.onreadystatechange = function(e, isAbort) {
+	      if (!isAbort && callback && (!s.readyState || /loaded|complete/.test(s.readyState)))
+	        callback()
+	    }
+	  }(document, '/assets/desk.js', 'salesforce-jssdk', callback));
+	</script>
+</body>
+</html>
